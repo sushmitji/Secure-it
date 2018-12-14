@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SecureIt!</title>
+    <script src="sha256.js"></script>
+    <script src="popup.js"></script>
+    <style>
+    body {
+			margin: 0;
+			font-family: "Courier New", Courier, monospace;
+    }
+    *:focus {
+			outline: none;
+		}
+    #din input{
+			display:table-cell;
+			border-width: 1px 0 ;
+			background-color: white;
+			color: black;
+		}
+		#din img {
+			vertical-align: middle;
+		}
+		.hash { float: left;}
+		#hash_site{
+			border-width: 1px 0 1px 1px;
+			text-align: right;
+			padding-right:6px;
+		}
+		#hash_phrase{
+			border-width: 1px 1px 1px 0; 
+			/* margin-left: -12px; */
+			margin-right: 0px;
+		}
+		#hash_pipe{
+			border-width: 1px 1px 1px 0; 
+			/* margin-left: -12px; */
+			margin-right: 0px;
+			text-align: center;
+			max-width: 15px;
+		}
+		#showhide {
+			/* margin-left: -5px; */
+			display: none;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		a:hover{
+			border-width: 1px;
+			color: #202020;
+		}
+    </style>
+  </head>
+  <body>
+		<div id="din">
+			<!-- two inputs styled to look like one -->
+			<input type="text" class="hash" id="hash_site" disabled placeholder="Enter Site...">
+			<input type="text" class="hash" id="hash_pipe" value=" | " size="1" disabled>
+			<input type="password" class="hash" id="hash_phrase" placeholder="Enter your password...">
+			<img id="showhide" title="Show Passphrase" src="show20.png" height=20>
+		</div>
+		<div style="text-align:center">
+			<!-- clickable text instead of "insert" button -->
+			<a href="#" id="hash_insert" title="Press [Enter] to Insert"><code id="hash_result"></code></a>
+    </div>
+  </body>
+</html>
+
